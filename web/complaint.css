@@ -1,0 +1,15 @@
+body {
+    opacity:1;
+    background-image: url("complaint.jpg"); 
+	background-size :100%;
+	
+   }
+    
+
+      .Heading {
+        font-family: 'Lobster', cursive;
+        font-size: 48px;
+		text-align: center;
+		color: #6D356C;
+      }
+	  

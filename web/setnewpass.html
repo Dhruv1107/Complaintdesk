@@ -1,0 +1,149 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="notify.js"></script>
+    <style>
+		
+	  .name {
+		font-family: 'Roboto', sans-serif;
+		font-size: 30px;
+		text-align:center;
+		color: #CCCC99;
+	  }
+	  table,td {
+	margin-left:25%;
+	padding-top: .5em;
+    padding-bottom: .5em;
+	}
+	th {
+	font-size:25px;
+	color: #ffffff;
+	}
+	.btn-primary {
+    margin-right: 5px;
+	}
+	.checkbox {
+	margin-left:54%;
+	color: #E5DBCF;
+	}
+	.btn-group {
+	margin-left:50%;
+	}  
+        .button {
+    background-color: #008CBA; 
+    border: none;
+	border-radius: 4px;
+    color: white;
+    padding: 6px 21px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+    </style>
+	<script type="text/javascript">
+
+   function toggle() {
+    var selectBox = document.getElementById("sel1");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+	console.log(selectedValue);
+	 var btn=document.getElementById("reg");
+	 console.log(btn);
+		btn.disabled=!btn.disabled;
+   }
+   function checkuser() {
+	   var j=0;
+	   var uname=document.getElementById("usr").value;
+	   var pwd=document.getElementById("pwd").value;
+	   var pwd1=document.getElementById("pwd1").value;
+	   if((uname==null || uname==""))
+	   {
+		  document.getElementById("emptyid").innerHTML="<span style='color:#CD5C5C'>*UserName should not be empty</span>"
+          return;
+	   }
+	   else
+	   {
+		   document.getElementById("emptyid").innerHTML="";
+		   j++;
+	   }
+	    if((pwd==null || pwd==""))
+	   {
+		  document.getElementById("emptypass").innerHTML="<span style='color:#CD5C5C'>*Password should not be empty</span>";
+		  return;
+	   }
+	   else
+	   {
+		   document.getElementById("emptypass").innerHTML="";
+		   j++;
+	   }
+	     if((pwd1==null || pwd1==""))
+	   {
+		  document.getElementById("emptypass1").innerHTML="<span style='color:#CD5C5C'>*Password should not be empty</span>";
+		  return;
+	   }
+	   else
+	   {
+		   document.getElementById("emptypass1").innerHTML="";
+		   j++;
+	   }
+      if(pwd!==pwd1)
+	   {
+		   
+		  document.getElementById("emptypass2").innerHTML="<span style='color:#CD5C5C'>*Passwords don't match</span>";
+		  return;
+		 
+	   }
+	  else
+	   {
+	    document.getElementById("emptypass2").innerHTML="";
+		j++;
+	   }
+	   
+        if (j == 4) {
+           $.notify("Password changed", "success");
+        }
+
+   setTimeout(function(){window.location.href="homepage.html"},1500);
+   }
+  </script>
+</head>
+<body>
+
+	<h3 class="name"></h3><br />
+         <form action="SetPass" method="post"> 
+	<table style="width:50%">
+         
+		<tr>
+			<th>New Password:</th>
+			<td>
+			<input type="password" class="form-control" id="p1" name="p1" placeholder="Enter new password">
+			<small><b id="emptypass"></b></small>
+			</td>
+		</tr>
+		<tr>
+			<th>Re-enter Password:</th>
+			<td>
+			<input type="password" class="form-control" id="p2" name="p2" placeholder="Re-enter password">
+			<small><b id="emptypass1"></b></small>
+			<small><b id="emptypass2"></b></small>
+			</td>
+		</tr>
+		
+	</table><br />
+		
+		<div class="btn-group">
+	   <button type="submit" value="Save" class="button">Save</button>
+           <a href="setnewpass.html" class="button" style="text-decoration: none;color:white;">Reset</a>
+		  <a href="index.html" class="button" style="text-decoration: none;color:white;">Cancel</a>
+           
+	 </div>
+         </form>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="complaint.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="notify.js"></script>
+  <style>
+
+</style>
+<script type="text/javascript">
+
+function checkdata()
+{
+	var j=0;
+	var i=document.getElementById("sel1").selectedIndex;
+	var options=document.getElementById("sel1").options;
+	console.log(options[i].text);
+	if(options[i].text==="Select your option")
+	{
+		document.getElementById("sel").innerHTML="<span style='color:#CD5C5C' align='center'>*Option should be selected</span>";
+		return;
+	}
+	else
+	{
+		document.getElementById("sel").innerHTML="";
+		j++;
+	}
+	var text=document.getElementById("text").value;
+	var words=text.split(" ").length;
+	console.log(words);
+	if(words<10)
+	{
+		document.getElementById("text1").innerHTML="<span style='color:#CD5C5C' align='center'>Text area must be greater than 10 words</span>";
+		return;
+	}
+	else
+	{
+		document.getElementById("text1").innerHTML="";
+		j++;
+	}
+	if(j==2)
+	{
+		$.notify("Complaint registered", "success");
+	}
+	else
+	{
+		$.notify("Error not registered", "error");
+	}
+	setTimeout(function(){window.location.href="homepage.html"},1500);
+}
+</script>
+<style>
+#fileselector {
+    margin: 10px; 
+}
+#upload-file-selector {
+    display:none;   
+}
+.margin-correction {
+    margin-right: 10px;   
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">MVSR</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li style="padding-left:30px;"><a href="homepage.html">Home&nbsp</a></li>
+      <li class="active" style="padding-left:30px;"><a href="complaint.html" >Register a Complaint</a></li>
+	  <li style="padding-left:30px;"><a href="viewcomplaint.html">View Complaints</a></li>
+	  <li style="padding-left:30px;"><a href="incharge.html">Incharges</a></li>
+	  <li style="padding-left:30px;"><a href="faqs.html">FAQs</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="edit.html">Edit Profile</a></li>
+          <li><a href="settings.html">Change Password</a></li>
+          <li><a href="LogoutServlet"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          
+        </ul>
+		</li>
+
+
+
+
+     
+    </ul>
+  </div>
+</nav>
+<br /><br /><br /><br />
+
+<table  border="0px" align="center">
+	<div class="container">
+		<form>
+			<div class="form-group">
+				<tr><th><label !for="sel1"><h3>Type of complaint:</h3></label></th></tr>
+				<tr>
+					<td width="50%">
+						<select class="form-control" id="sel1">
+							<option value="" disabled selected>Select your option</option>
+							<option>library issue</option>
+							<option>classroom issue</option>
+							<option>faculty issue</option>
+							<option>sanatary issue</option>
+							<option>physical department issue</option>
+							<option>laboratory issue</option>
+							<option>others</option>
+						</select>
+						<small><b id="sel"></b></small>
+					</td>
+				</tr>
+			</div>
+	    </form>
+	</div>
+</table>
+      <br>
+
+	    <div class="container">
+			<form>
+				<div class="form-group" align="center">
+					<label for="comment"><h3>Description of complaint<h3></label>
+					<textarea class="form-control" rows="5" cols="100" id="text"></textarea>
+					<small><b id="text1"></b></small>
+				</div>
+			<div class="form-group" align="center">
+			    <span id="fileselector">
+				<label class="btn btn-default" for="upload-file-selector">
+				<input id="upload-file-selector" type="file">
+				<i class="fa_icon icon-upload-alt margin-correction"></i>
+				</label>
+				</span>
+			</div>
+
+			</form>
+				 <div align="center">
+					<button type="button" class="btn btn-success" onclick="checkdata();">Submit</button>
+				 </div>
+		</div>
+
+</body>
+</html>

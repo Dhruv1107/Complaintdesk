@@ -1,0 +1,153 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+    <style>
+        .name {
+		font-family: 'Roboto', sans-serif;
+		font-size: 30px;
+		text-align:center;
+		color: #000000;
+	  }
+	  table,td {
+	margin-left:31%;
+	padding-top: .5em;
+    padding-bottom: .5em;
+	}
+	th {
+	font-size:25px;
+	color: #000000;
+	}
+	.btn-primary {
+    margin-right: 5px;
+	}
+	.checkbox {
+	margin-left:54%;
+	color: #E5DBCF;
+	}
+	.btn-group {
+	margin-left:50%;
+	}  
+	 #first {
+        margin-left: 16%;
+		text-decoration: none;
+        }
+		
+    </style>
+	<script type="text/javascript">
+	
+   function toggle() {
+    var selectBox = document.getElementById("sel1");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+	console.log(selectedValue);
+	 var btn=document.getElementById("reg");
+	 btn.disabled=!btn.disabled;
+   }
+ 
+   function checkuser() {
+	   var uname=document.getElementById("usr").value;
+	   var pwd=document.getElementById("pwd").value;
+	   var type=document.getElementById("sel1").value;
+	   if(type==="Student")
+	   {
+		   if((uname==null || uname==""))
+		   {
+			  document.getElementById("emptyid").innerHTML="<span style='color:#CD5C5C'>*UserName should not be empty</span>";
+			  return;
+		   }
+		   else
+		   {
+			   document.getElementById("emptyid").innerHTML="";
+			   
+		   }
+			if((pwd==null || pwd==""))
+		   {
+			  document.getElementById("emptypass").innerHTML="<span style='color:#CD5C5C'>*Password should not be empty</span>";
+			  return;
+		   }
+		   else
+		   {
+			   document.getElementById("emptypass").innerHTML="";
+			   
+		   }
+		  
+	   }
+	   else if(type=="Incharge")
+	   {
+			if((uname==null || uname==""))
+		   {
+			  document.getElementById("emptyid").innerHTML="<span style='color:#CD5C5C'>*UserName should not be empty</span>";
+			  return;
+		   }
+		   else
+		   {
+			   document.getElementById("emptyid").innerHTML="";
+			   
+		   }
+			if((pwd==null || pwd==""))
+		   {
+			  document.getElementById("emptypass").innerHTML="<span style='color:#CD5C5C'>*Password should not be empty</span>";
+			  return;
+		   }
+		   else
+		   {
+			   document.getElementById("emptypass").innerHTML="";
+			   
+		   }
+		 
+	   }
+   }
+  </script>
+</head>
+<body>
+<img src="logo.png" class="img-rounded" alt="Cinque Terre" width=100% height="200"> 
+    <h1 class="Heading" align="center"><font size="6" color="#ffffff"><strong>MVSR Complaint Desk</strong></font></h1>
+	
+	<h3 class="name"><font size="6" color="#ffffff">User Login</font></h3><br />
+         
+	<table style="width:50%">
+	<form action="FirstServlet" method="post"> 
+		<tr>
+			<td><font size="5" color="#ff0000"><strong>User Name:</strong></font></td>
+			<td>
+			<input type="text" class="form-control" id="usr" name="username" placeholder="Enter User Name">
+			<small><b id="emptyid"></b></small>
+			</td>
+		</tr><br />
+		<tr>
+			<td><font size="5" color="#ff0000"><strong>Password:</strong></font></td>
+			<td>
+			<input type="password" class="form-control" id="pwd" name="userpass" placeholder="Enter password">
+			<small><b id="emptypass"></b></small>
+			</td>
+		</tr>
+		<tr>
+			<td><font size="5" color="#ff0000"><strong>User Type:</strong></font></td>
+			<td>  <select class="form-control" id="sel1" name="select" onchange="toggle();">
+					<option>Student</option>
+					<option>Incharge</option>
+					</select>
+			</td>
+		</tr>
+	</table><br />
+		
+		<div class="btn-group">
+	   <button type="submit" value="login" class="btn btn-primary" !onclick="checkuser();">Login</button>
+            </form>
+  <button type="button" class="btn btn-primary" id="reg" onclick="location.href = 'register.html';">Register</button>
+  <br />
+ 
+	 </div>
+	
+	<div align='center'>
+	<br />
+        <h4><a href="forgot.html" style="color:black" id="first"><font size="5" color="#ffffff">Forgot Password?</font></a></h4>
+		</div>
+       
+</body>
+</html>

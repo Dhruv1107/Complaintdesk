@@ -1,0 +1,18 @@
+body {
+    opacity:1;
+    background: url("viewcomplaint.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+   }
+    
+
+      .Heading {
+        font-family: 'Lobster', cursive;
+        font-size: 48px;
+		text-align: center;
+		color: #6D356C;
+      }
+	  

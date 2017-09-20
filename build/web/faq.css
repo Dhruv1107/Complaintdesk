@@ -1,0 +1,15 @@
+body {
+   
+    background-image: url("faq.jpg")
+   
+	
+	
+   }
+    
+
+      .Heading {
+        font-family: 'Lobster', cursive;
+        font-size: 48px;
+		text-align: center;
+		color: #6D356C;
+      }
