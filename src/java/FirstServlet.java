@@ -19,6 +19,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
     String p=request.getParameter("userpass");  
     String s=request.getParameter("select"); 
     String s1="Student";
+    
       
     if(s.equals(s1))
     {
@@ -52,6 +53,9 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
         {
             if(LoginInc.validate(n, p))
             {  
+                 HttpSession session=request.getSession();  
+                   session.setAttribute("n",n);  
+                   session.setAttribute("p",p); 
             RequestDispatcher rd=request.getRequestDispatcher("incharges.html"); 
             rd.forward(request,response);  
             }  

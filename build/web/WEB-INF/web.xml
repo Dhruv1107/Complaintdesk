@@ -24,6 +24,30 @@
         <servlet-name>SetPass</servlet-name>
         <servlet-class>SetPass</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>StoreComServlet</servlet-name>
+        <servlet-class>StoreComServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowComServlet</servlet-name>
+        <servlet-class>ShowComServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IChangePass</servlet-name>
+        <servlet-class>IChangePass</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IShowComServlet</servlet-name>
+        <servlet-class>IShowComServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResolveComplaint</servlet-name>
+        <servlet-class>ResolveComplaint</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IResComServlet</servlet-name>
+        <servlet-class>IResComServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/FirstServlet</url-pattern>
@@ -47,6 +71,30 @@
     <servlet-mapping>
         <servlet-name>SetPass</servlet-name>
         <url-pattern>/SetPass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StoreComServlet</servlet-name>
+        <url-pattern>/StoreComServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowComServlet</servlet-name>
+        <url-pattern>/ShowComServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IChangePass</servlet-name>
+        <url-pattern>/IChangePass</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IShowComServlet</servlet-name>
+        <url-pattern>/IShowComServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResolveComplaint</servlet-name>
+        <url-pattern>/ResolveComplaint</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IResComServlet</servlet-name>
+        <url-pattern>/IResComServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

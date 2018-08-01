@@ -3,9 +3,18 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="jquery-3.2.1.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Asap+Condensed" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		li
+		{ 
+		display:inline-block;
+		}   
+	 </style> 
 	</head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -14,9 +23,10 @@
       <a class="navbar-brand" href="#">MVSR</a>
     </div>
     <ul class="nav navbar-nav">
-      <li  class="active" style="padding-left:30px;"><a href="homepage.html">Home&nbsp</a></li>
-      <li style="padding-left:30px;"><a href="complaint.html" >Solve complaints</a></li>
-	  <li style="padding-left:30px;"><a href="viewcomplaint.html">View Complaints</a></li>
+      <li  class="active" style="padding-left:30px;"><a href="incharges.html">Home&nbsp</a></li>
+      
+	  <li style="padding-left:30px;"><a href="isolvecomplaint.html">Solve Complaints</a></li>
+          <li style="padding-left:30px;"><a href="iresolvecomplaint.html">Resolved Complaints</a></li>
 	  
 	  
     </ul>
@@ -25,7 +35,7 @@
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
 		<ul class="dropdown-menu">
 		  <li><a href="edit.html">Edit Profile</a></li>
-          <li><a href="settings.html">Change Password</a></li>
+          <li><a href="isettings.html">Change Password</a></li>
           <li><a href="logout.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           
         </ul>
@@ -33,6 +43,83 @@
     </ul>
   </div>
 </nav>
+    <div class="w3-content w3-display-container">
+
+	<div class="w3-display-container mySlides">
+	  <img src="1.jpg" style="width:980;height:550">
+	  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+		Mechanical Block
+	  </div>
+	</div>
+
+	<div class="w3-display-container mySlides">
+	  <img src="2.jpg" style="width:980;height:550">
+	  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+		Civil Block
+	  </div>
+	</div>
+
+	<div class="w3-display-container mySlides">
+	  <img src="4.jpg" style="width:980;height:550">
+	  <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+		CSE Block
+	  </div>
+	</div>
+
+	<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
+<script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+		 x[i].style.display = "none";  
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	}
+</script>
+
+<!-- Data -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+	<table style="border:1px solid red;float:left;" style="border-radius: 25px;">
+	<h3 class="w3-justify" style="color:white;">MVSR Complaint Desk is an online web portal where a student can raise different types of queries related to college premises.Here a student can report any type of problem online, which will be reported to concerned department or authorities.</br></br>
+	 'Register a Complaint' tab is available in the navigation menu to raise different type of queries.Any student can raise any number of queries by clicking on the 'Register a Complaint' option.
+	 Students can view their raised complaints by clicking on 'View Complaints' tab available in the menu.</br></br>
+	List of Incharges of concerned departments can be viewed by the students by clicking on the 'Incharges' tab in the menu bar.</br></br>
+	 'FAQs' option is made available in the navigation menu about the query raising procedure.Students can go through it to have a basic knowledge about how the query is being processed.</br></br>
+	 Students can also change their passwords by clicking on the settings menu where they may find 'Change password' option.</br></br>
+	 Students can edit their general details by clicking on the 'Edit Profile' option available in the settings menu.</br></br>
+	</h3></table>
+</div>
+
+<!-- Map -->
+<div style="text-align:center;width:100%;">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15238.828237166825!2d78.5385219!3d17.2814017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x58c171967385349e!2sMVSR+Engineering+College!5e0!3m2!1sen!2sin!4v1503333279716" width="1000" height="500" frameborder="0" style="border:0" allowfullscreen ></iframe>
+</div>
+
+
+<!-- Footer Section -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+	  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+	  <i class="fa fa-instagram w3-hover-opacity"></i>
+	  <i class="fa fa-snapchat w3-hover-opacity"></i>
+	  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+	  <i class="fa fa-twitter w3-hover-opacity"></i>
+	  <i class="fa fa-linkedin w3-hover-opacity"></i>
+	  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CR7</a></p>
+</footer>
 
 </body>
 </html>

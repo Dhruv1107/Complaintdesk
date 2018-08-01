@@ -9,7 +9,7 @@
   <style>
 
 </style>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 
 function checkdata()
 {
@@ -50,7 +50,7 @@ function checkdata()
 	}
 	setTimeout(function(){window.location.href="homepage.html"},1500);
 }
-</script>
+</script>-->
 <style>
 #fileselector {
     margin: 10px; 
@@ -60,6 +60,19 @@ function checkdata()
 }
 .margin-correction {
     margin-right: 10px;   
+}
+.button {
+    background-color: #008CBA; 
+    border: none;
+	border-radius: 4px;
+    color: white;
+    padding: 6px 21px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -95,15 +108,16 @@ function checkdata()
   </div>
 </nav>
 <br /><br /><br /><br />
-
+<form action="StoreComServlet" method="post">
 <table  border="0px" align="center">
 	<div class="container">
-		<form>
+            
+		
 			<div class="form-group">
 				<tr><th><label !for="sel1"><h3>Type of complaint:</h3></label></th></tr>
 				<tr>
 					<td width="50%">
-						<select class="form-control" id="sel1">
+						<select class="form-control" id="sel1" name="type">
 							<option value="" disabled selected>Select your option</option>
 							<option>library issue</option>
 							<option>classroom issue</option>
@@ -117,16 +131,16 @@ function checkdata()
 					</td>
 				</tr>
 			</div>
-	    </form>
+	    
 	</div>
 </table>
       <br>
 
 	    <div class="container">
-			<form>
+			
 				<div class="form-group" align="center">
 					<label for="comment"><h3>Description of complaint<h3></label>
-					<textarea class="form-control" rows="5" cols="100" id="text"></textarea>
+					<textarea class="form-control" rows="5" cols="100" id="text" name="desc"></textarea>
 					<small><b id="text1"></b></small>
 				</div>
 			<div class="form-group" align="center">
@@ -138,9 +152,10 @@ function checkdata()
 				</span>
 			</div>
 
-			</form>
+			
 				 <div align="center">
-					<button type="button" class="btn btn-success" onclick="checkdata();">Submit</button>
+					<input type="submit" value="Submit" class="button" />
+                                        </form>
 				 </div>
 		</div>
 

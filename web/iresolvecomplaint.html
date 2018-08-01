@@ -30,18 +30,21 @@
 		<div class="navbar-header">
       <a class="navbar-brand" href="#">MVSR</a>
     </div>
-		 <ul class="nav navbar-nav">
-      <li style="padding-left:30px;"><a href="homepage.html">Home&nbsp</a></li>
-      <li style="padding-left:30px;"><a href="complaint.html" >Register a Complaint</a></li>
-	  <li class="active" style="padding-left:30px;"><a href="viewcomplaint.html">View Complaints</a></li>
-	  <li style="padding-left:30px;"><a href="incharge.html">Incharges</a></li>
-	  <li style="padding-left:30px;"><a href="faqs.html">FAQs</a></li>
+		 
+      <ul class="nav navbar-nav">
+      <li  style="padding-left:30px;"><a href="incharges.html">Home</a></li>
+      
+	  <li style="padding-left:30px;"><a href="isolvecomplaint.html">Solve Complaints</a></li>
+	  <li class="active" style="padding-left:30px;"><a href="iresolvecomplaint.html">Resolved Complaints</a></li>
+	  
+	  
     </ul>
+   
 		<ul class="nav navbar-nav navbar-right">
 			<li>
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="settings.html">Change Password</a></li>
+						<li><a href="isettings.html">Change Password</a></li>
 						<li><a href="editprofile.html">Edit Profile</a></li>
 						<li><a href="LogoutServlet"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					</ul>
@@ -51,9 +54,9 @@
 </nav>
 <br /><br /><br /><br />
 
-<form action="ShowComServlet" method="get">
+<form action="IResComServlet" method="get">
     <div align="center">
-   <input type="submit" value="Show Complaints" class="button" /> 
+   <input type="submit" value="Show Resolved Complaints" class="button" /> 
    
 </form>
 </div>
